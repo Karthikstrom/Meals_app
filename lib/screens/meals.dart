@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:meals_app/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
   const MealsScreen({
@@ -12,15 +13,22 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Widget content = ListView.builder(
+    //     itemCount: meals.length,
+    //     itemBuilder: (BuildContext context, int index) {
+    //       return listViewBox(
+    //         meals[index].imageUrl,
+    //         meals[index].title,
+    //         meals[index].affordability,
+    //       );
+    //     });
+
     Widget content = ListView.builder(
         itemCount: meals.length,
         itemBuilder: (BuildContext context, int index) {
-          return listViewBox(
-            meals[index].imageUrl,
-            meals[index].title,
-            meals[index].affordability,
-          );
+          return MealItem(meal: meals[index]);
         });
+
     if (meals.isEmpty) {
       content = const Center(
         child: Column(
@@ -50,8 +58,11 @@ class MealsScreen extends StatelessWidget {
             Image.network(imageURL),
             Column(
               children: [
-                Text(title),
-                Text('$affordability'),
+                Text(
+                  title,
+                  style: TextStyle(color: Colors.white),
+                ),
+                Text('$affordability', style: TextStyle(color: Colors.white)),
               ],
             ),
           ],
