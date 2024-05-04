@@ -13,16 +13,6 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Widget content = ListView.builder(
-    //     itemCount: meals.length,
-    //     itemBuilder: (BuildContext context, int index) {
-    //       return listViewBox(
-    //         meals[index].imageUrl,
-    //         meals[index].title,
-    //         meals[index].affordability,
-    //       );
-    //     });
-
     Widget content = ListView.builder(
         itemCount: meals.length,
         itemBuilder: (BuildContext context, int index) {
@@ -42,6 +32,7 @@ class MealsScreen extends StatelessWidget {
         ),
       );
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -50,22 +41,4 @@ class MealsScreen extends StatelessWidget {
     );
   }
 
-  Widget listViewBox(String imageURL, String title, Enum affordability) {
-    return Container(
-        padding: const EdgeInsets.all(8),
-        child: Row(
-          children: [
-            Image.network(imageURL),
-            Column(
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(color: Colors.white),
-                ),
-                Text('$affordability', style: TextStyle(color: Colors.white)),
-              ],
-            ),
-          ],
-        ));
-  }
 }
