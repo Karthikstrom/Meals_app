@@ -5,7 +5,7 @@ import 'package:meals_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
-  MealItem({
+  const MealItem({
     super.key,
     required this.meal,
   });
@@ -61,7 +61,8 @@ class MealItem extends StatelessWidget {
                 child: Container(
                   //width: double.infinity,
                   color: Colors.black54,
-                  padding: EdgeInsets.symmetric(vertical: 6, horizontal: 44),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 6, horizontal: 44),
                   child: Column(
                     children: [
                       Text(

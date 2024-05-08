@@ -18,46 +18,46 @@ class MealDetailsScreen extends StatelessWidget {
         title: Text(meal.title),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.network(
-              meal.imageUrl,
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Ingredients',
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                  ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            for (final ingredient in meal.ingredients)
-              Text(
-                ingredient,
-                style: TextStyle(color: Colors.white),
+        child: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.network(
+                meal.imageUrl,
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-            const SizedBox(height: 10),
-            Text(
-              'Steps',
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                  ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            for (final step in meal.steps)
-              Text(
-                step,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+              const SizedBox(height: 10),
+              const Text(
+                'Ingredients',
+                style: TextStyle(color: Colors.orange, fontSize: 20),
               ),
-          ],
+              const SizedBox(
+                height: 10,
+              ),
+              for (final ingredient in meal.ingredients)
+                Text(
+                  ingredient,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              const SizedBox(height: 10),
+              const Text(
+                'Steps',
+                style: TextStyle(color: Colors.orange, fontSize: 20),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              for (final step in meal.steps)
+                Text(
+                  step,
+                  textAlign: TextAlign.left,
+                  maxLines: 2,
+                  style: const TextStyle(color: Colors.white),
+                ),
+            ],
+          ),
         ),
       ),
     );
