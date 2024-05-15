@@ -25,7 +25,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
     _lactoseFreeFilterSet = widget.currentFilters[Filter.lactoseFree]!;
@@ -33,6 +32,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     _veganFilterSet = widget.currentFilters[Filter.vegan]!;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
